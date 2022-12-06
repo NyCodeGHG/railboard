@@ -1,4 +1,4 @@
-import {getBaseUrl} from "../../server/base-url";
+import { getBaseUrl } from "../../server/base-url";
 
 export type Station = {
   name: string
@@ -14,7 +14,7 @@ export type Trip = {
 }
 
 export default async function journeyMatch(input: string, date: Date): Promise<Array<Trip>> {
-  const response = await fetch(`${getBaseUrl()}/api/hafas/journey_match?q=${input}&date=${date}`, {
+  const response = await fetch(`/api/hafas/journey_match?q=${input}&date=${date}`, {
     method: "GET",
   });
 
